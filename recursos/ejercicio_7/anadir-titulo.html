@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CineLista - Añadir título</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="mi-lista.html">CineLista</a>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="mi-lista.html">Mi lista</a></li>
+        <li class="nav-item"><a class="nav-link active" href="anadir-titulo.html">Añadir título</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="contenedor">
+    <h1 class="titulo">Añadir título</h1>
+    <p class="subtitulo">Rellena los datos de la película y pulsa Guardar.</p>
+
+    <!-- El botón Guardar envía los datos al controlador: POST /peliculas -->
+    <form id="form-pelicula" action="/peliculas" method="post">
+      <div class="mb-3">
+        <label for="titulo" class="form-label">Título</label>
+        <input type="text" class="form-control" id="titulo" name="titulo" required>
+      </div>
+      <div class="mb-3">
+        <label for="director" class="form-label">Director</label>
+        <input type="text" class="form-control" id="director" name="director" required>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="anio" class="form-label">Año</label>
+          <input type="number" class="form-control" id="anio" name="anio" min="1888" max="2100" required>
+        </div>
+        <div class="col-md-8 mb-3">
+          <label for="genero" class="form-label">Género</label>
+          <input type="text" class="form-control" id="genero" name="genero" required>
+        </div>
+      </div>
+      <button type="submit" id="btn-guardar" name="btnGuardar" class="boton boton-anadir">Guardar</button>
+      <a href="mi-lista.html" class="btn btn-link">Cancelar</a>
+    </form>
+  </div>
+</body>
+</html>

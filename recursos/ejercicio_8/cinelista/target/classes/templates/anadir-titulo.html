@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CineLista - Añadir título</title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+  <nav th:replace="~{fragments :: navbar(activa='anadir')}"></nav>
+
+  <div class="contenedor">
+    <h1 class="titulo">Añadir título</h1>
+    <p class="subtitulo">Rellena los datos de la película y pulsa Guardar.</p>
+
+    <form id="form-pelicula" th:action="@{/peliculas}" th:object="${pelicula}" method="post">
+      <div class="mb-3">
+        <label for="titulo" class="form-label">Título</label>
+        <input type="text" class="form-control" id="titulo" th:field="*{titulo}" required>
+      </div>
+      <div class="mb-3">
+        <label for="director" class="form-label">Director</label>
+        <input type="text" class="form-control" id="director" th:field="*{director}" required>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="anio" class="form-label">Año</label>
+          <input type="number" class="form-control" id="anio" th:field="*{anio}" min="1888" max="2100" required>
+        </div>
+        <div class="col-md-8 mb-3">
+          <label for="genero" class="form-label">Género</label>
+          <input type="text" class="form-control" id="genero" th:field="*{genero}" required>
+        </div>
+      </div>
+      <button type="submit" id="btn-guardar" name="btnGuardar" class="boton boton-anadir">Guardar</button>
+      <a th:href="@{/}" class="btn btn-link">Cancelar</a>
+    </form>
+  </div>
+</body>
+</html>

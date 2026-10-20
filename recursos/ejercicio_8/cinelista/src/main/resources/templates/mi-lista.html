@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CineLista - Mi lista</title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body id="ib9k">
+  <nav th:replace="~{fragments :: navbar(activa='lista')}"></nav>
+
+  <div id="contenedor-principal" class="contenedor">
+    <h1 id="titulo-pagina" class="titulo">Mi lista</h1>
+    <p id="subtitulo-pagina" class="subtitulo">Las películas que he guardado en CineLista.</p>
+    <a id="btn-anadir" class="boton boton-anadir d-inline-block text-decoration-none" th:href="@{/anadir}">+ Añadir película</a> <!-- autogenerado: botón creado con el editor visual -->
+
+    <div class="table-responsive mt-4">
+      <table id="tabla-peliculas" class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Director</th>
+            <th>Año</th>
+            <th>Género</th>
+            <th class="text-end">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="p : ${peliculas}">
+            <td th:text="${p.titulo}">Título</td>
+            <td th:text="${p.director}">Director</td>
+            <td th:text="${p.anio}">2000</td>
+            <td th:text="${p.genero}">Género</td>
+            <td class="text-end">
+              <form th:action="@{/peliculas/{id}/eliminar(id=${p.id})}" method="post" class="d-inline">
+                <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
+              </form>
+            </td>
+          </tr>
+          <tr th:if="${#lists.isEmpty(peliculas)}">
+            <td colspan="5" class="text-center text-muted">Todavía no has guardado ninguna película.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

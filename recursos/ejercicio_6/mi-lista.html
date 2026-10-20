@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CineLista - Mi lista</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="ib9k">
+  <!-- Barra de navegación (añadida a mano) -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="mi-lista.html">CineLista</a>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link active" href="mi-lista.html">Mi lista</a></li>
+        <li class="nav-item"><a class="nav-link" href="anadir-titulo.html">Añadir título</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenedor principal de la página -->
+  <div id="contenedor-principal" class="contenedor">
+    <h1 id="titulo-pagina" class="titulo">Mi lista</h1>
+    <p id="subtitulo-pagina" class="subtitulo">Las películas que he guardado en CineLista.</p>
+    <button type="button" id="btn-anadir" name="btnAnadir" class="boton boton-anadir">+ Añadir película</button> <!-- autogenerado: botón creado con el editor visual -->
+
+    <!-- Tabla de películas (añadida a mano) -->
+    <div class="table-responsive mt-4">
+      <table id="tabla-peliculas" class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Director</th>
+            <th>Año</th>
+            <th>Género</th>
+            <th class="text-end">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>El Padrino</td>
+            <td>Francis Ford Coppola</td>
+            <td>1972</td>
+            <td>Drama</td>
+            <td class="text-end"><button type="button" class="btn btn-sm btn-danger">Borrar</button></td>
+          </tr>
+          <tr>
+            <td>Matrix</td>
+            <td>Lana y Lilly Wachowski</td>
+            <td>1999</td>
+            <td>Ciencia ficción</td>
+            <td class="text-end"><button type="button" class="btn btn-sm btn-danger">Borrar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
